@@ -1,0 +1,220 @@
+$base-color: #f3f3f3;
+$secondary-color: #0c343d;
+
+@for $i from 1 to 6 {
+    .mb-#{$i} {
+        margin-bottom: 0.5rem * $i;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    background-color: $base-color;
+    color: $secondary-color;
+    border-color: $secondary-color;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Lobster", sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+img,
+video {
+    max-width: calc(100% - 4px);
+    border: 2px solid;
+    border-radius: 5px;
+    pointer-events: none;
+    transition: opacity ease 1s;
+}
+
+.btn {
+    background-color: $secondary-color;
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+    color: $base-color;
+    padding: 6px 16px;
+    font-family: "Oswald";
+    font-size: 16px;
+
+    &:hover {
+        background-color: $base-color;
+        color: $secondary-color;
+        cursor: pointer;
+    }
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    & > label {
+        text-align: center;
+    }
+
+    &:hover > label {
+        font-weight: 600;
+    }
+}
+
+textarea {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    font-size: 1rem;
+    padding: 4px 8px;
+    width: 200px;
+    border-color: darken($color: $base-color, $amount: 3);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+
+    &:focus {
+        border-color: $secondary-color;
+        outline: none;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    background-color: $secondary-color;
+}
+
+.text-input-box,
+.select-box {
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+
+    & > label {
+        width: 70px;
+        display: block;
+    }
+
+    &:focus-within > label {
+        font-weight: 600;
+    }
+
+    &:hover > input {
+        border-color: $secondary-color;
+        outline: none;
+    }
+
+    &:hover > label {
+        font-weight: 600;
+    }
+}
+
+.survey {
+    padding: 0 8px;
+    max-width: 756px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & p {
+        text-align: center;
+        font-style: italic;
+        padding-top: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    & > header > h1 {
+        text-align: right;
+        font-size: 2rem;
+        border-bottom: 1px dotted;
+        line-height: 0.75;
+    }
+
+    & .pages {
+        display: flex;
+        flex: 1;
+
+        & .wrapper {
+            width: 100%;
+            display: flex;
+
+            & .page {
+                width: 100%;
+
+                &#hero-page {
+                    align-self: center;
+
+                    & .media-wrapper {
+                        max-width: 756px;
+                    }
+
+                    & .btn-wrapper {
+                        text-align: center;
+                    }
+                }
+
+                &#form-page {
+                    & .form-section {
+                        border-top: 1px dotted $secondary-color;
+                        display: flex;
+                        padding: 1rem;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        &.grid {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+
+                            & label {
+                                text-align: left;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+
+                        & > label {
+                            padding: 0.5rem;
+                        }
+
+                        & > label:last-of-type {
+                            margin-bottom: 0;
+                        }
+
+                        & > textarea {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > footer {
+        border-top: 1px dotted;
+    }
+}

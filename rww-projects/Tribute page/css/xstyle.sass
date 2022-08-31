@@ -1,0 +1,319 @@
+@import variables.sass
+@import reset.sass
+@import xtimeline.sass
+
+
+
+@mixin flexCenter()  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+@font-face 
+    font-family: medieval;
+    src: url(../fonts/scribish.ttf);
+
+
+body 
+    background-image: $background-color;
+
+
+.container 
+    margin: 0 auto;
+
+@media screen and (min-width:768px) 
+    .container 
+        width: 750px;
+ 
+
+@media screen and (min-width:992px) 
+    .container 
+        width: 970px;
+ 
+
+@media screen and  (min-width:1200px) 
+    .container 
+        width: 1170px;
+ 
+
+
+.timeline-wrapper
+    width: 100%;
+    //margin-top: -2rem;
+    scrollbar-width: none;
+
+
+.frontpage-container 
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-between;
+    height: 100%;
+
+
+.about-container 
+    @include flexCenter()
+    flex-flow: column;
+    text-align: center;
+    margin: 0 auto;
+    font-family: medieval;
+    
+    h1 
+        font-size: 4rem;
+        padding: 1rem;
+
+    h3 
+        font-size: 2rem;
+        padding: 1rem;
+
+
+#img-div 
+    @include flexCenter()
+    flex-flow: column;
+    align-self: flex-end;
+    max-width: 600px;
+    z-index: 500;
+    padding-bottom: 5rem;
+    padding-top: 1rem;
+
+
+#image 
+    max-width: 100%;
+    max-height: 600px;
+    z-index: 600;
+
+    &::after
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: black;
+
+
+#img-caption 
+    bottom: 3rem;
+    color: #fff5a9;
+    font-family: 'Open Sans', sans-serif;
+    z-index: 600;
+    position: relative;
+
+
+.triangle 
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: $accent-color;
+    height: 2rem;
+    margin-top: -7rem;
+    border-top-left-radius: 5% 5%;
+    z-index: 500;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  
+    &::before     
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0px;
+        border-style: solid;
+        border-width: 2rem 2rem 0px 2rem;
+        border-color: $accent-color transparent transparent transparent;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        transition: 0.8s ease-in;
+        
+  
+@media (pointer: coarse) 
+    .triangle::before 
+        margin: 0;
+
+
+@media (pointer: fine) 
+    .triangle::before 
+        //margin: 0 0 0 -1rem;
+    
+
+.curved 
+    position: absolute;
+    width: 100%;
+    background: $accent-color;
+    height: 2rem;
+    border-bottom-left-radius: 50% 15%;
+    border-bottom-right-radius: 50% 15%;
+  
+
+.lines 
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: $accent-color;
+
+
+ul 
+    margin: 0;
+    padding: 0;
+
+
+.timeline-container:nth-child(1) 
+    margin-top: 100px;
+
+
+li 
+    list-style: none;
+
+
+@media screen and (max-width: 768px) 
+    .frontpage-container 
+        flex-flow: column;
+        justify-content: center;
+    
+    #img-div 
+        width: 100%;
+        max-width: 350px;
+        align-self: center;
+        padding-top: 0;
+    
+    .about-container 
+        height: 15%;
+        width: 100%;
+        padding-left: 0;
+        padding-top: 2rem;
+    
+    .triangle::before
+        left: 56px;
+        border-width: 2rem 2rem 0px 2rem;
+        margin-left: 0;
+    
+
+
+.line p 
+    margin-left: 2rem;
+    border: 1px solid black;
+
+
+.picture-img
+    max-width: 100%;
+    
+.wiki-link
+    @include flexCenter()
+    margin-top: 30px;
+    padding: 50px;
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    flex-flow: column;
+    align-items: start;
+    background: $accent-color;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 -6px 20px 0 rgba(0, 0, 0, 0.19),0 -2px 8px 0 rgba(0, 0, 0, 0.5);
+    
+    a 
+        text-decoration: none;
+        color: inherit;
+
+    p
+        &::first-letter
+            font-family: medieval;
+
+@media screen and (min-width:768px) 
+    .wiki-link 
+        flex-flow: row;            
+
+
+.footer 
+    padding: 1rem 1rem 0 1rem;
+    background-color: transparent;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+.author 
+    color: black;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    transform: rotateZ(0rad);
+    
+    
+    &::before
+        content: "";
+        position: relative;
+        display: flex;
+        background-image: url("http://icons.iconarchive.com/icons/wikipedia/flags/512/CZ-Czech-Republic-Flag-icon.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 2rem;
+        height: 1.5rem;
+        clip-path: polygon(0% 0, 100% 50%, 50% 100%, 0 50%);
+        
+            
+
+.footer-icons
+    display: flex;
+    padding-bottom: 1rem;
+    
+
+.icon, .icon2 
+    @include flexCenter()
+    transform: rotateY(6rad);
+    transform-style: preserve-3d;
+    width: 5rem;
+
+    & > img 
+        max-width: 3rem;
+        height: 2.5rem;
+
+    &:hover  
+        animation-name: scaleX;
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-direction: forward;
+        animation-timing-function: linear;
+        animation-delay: 0.2s;
+  
+.page-header 
+    border: none;
+
+.page-end
+    padding: 0.7rem 0;
+    background-color: $accent-color;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.7), 0 -6px 10px 0 rgba(0, 0, 0, 0.19);
+
+
+.icon2:hover
+    animation-name: rotateY;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+
+@keyframes rotateY
+  0% 
+    transform: rotateY(6rad);
+  25% 
+    transform: rotateY(9rad);
+  50%
+    transform: rotateY(12rad);
+  75%
+    transform: rotateY(9rad);
+  100%
+    transform: rotateY(6rad);
+
+@keyframes scaleX
+    0%
+        transform: scaleX(100%);
+    15%
+        transform: scaleX(115%);
+    30%
+        transform: scaleX(100%);
+    45%
+        transform: scaleX(115%);
+    60%
+        transform: scaleX(100%);
+    75%
+        transform: scaleX(115%);
+    90%
+        transform: scaleX(80%);
+    100%
+        transform: scaleX(100%);
+        

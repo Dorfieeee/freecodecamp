@@ -1,0 +1,24 @@
+{
+  "name": "technical-documentation-page",
+  "version": "1.0.0",
+  "description": "Webpage of for technical documentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dorfieeee/freeCodeCamp.git"
+  },
+  "keywords": [
+    "freeCodeCamp",
+    "technical-documentation-page",
+    "final-project"
+  ],
+  "author": "David Rosendorf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dorfieeee/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/Dorfieeee/freeCodeCamp#readme"
+}

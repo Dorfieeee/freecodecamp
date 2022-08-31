@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/favicon/favicon-16x16.png"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link
+            rel="mask-icon"
+            href="assets/favicon/safari-pinned-tab.svg"
+            color="#5bbad5"
+        />
+        <link rel="stylesheet" href="styles/css/styles.css" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <section class="survey">
+            <header>
+                <h1 id="title">Holidays Survey</h1>
+            </header>
+            <div class="pages">
+                <div class="wrapper">
+                    <div id="hero-page" class="page">
+                        <p id="description" class="mb-3">
+                            We would love to know how you like your holidays.
+                            Can you help us?
+                        </p>
+                        <div class="media-wrapper mb-3">
+                            <video width="756" id="hero-video">
+                                <source
+                                    src="assets/video/hero.mp4"
+                                    type="video/mp4"
+                                />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="btn-wrapper mb-3">
+                            <button class="btn" id="start-survey-btn">
+                                Start survey!
+                            </button>
+                        </div>
+                    </div>
+                    <div id="form-page" class="page hidden">
+                        <form action="/" method="POST" id="survey-form">
+                            <p>Personal details</p>
+                            <div class="form-section">
+                                <div class="text-input-box">
+                                    <label for="name" id="name-label"
+                                        >Name</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="John Doe"
+                                        required
+                                    />
+                                </div>
+                                <div class="text-input-box">
+                                    <label for="email" id="email-label">
+                                        Email
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="john.doe@example.com"
+                                        required
+                                    />
+                                </div>
+                                <div class="text-input-box">
+                                    <label for="number" id="number-label">
+                                        Age
+                                    </label>
+                                    <input
+                                        type="number"
+                                        id="number"
+                                        name="age"
+                                        min="0"
+                                        max="125"
+                                        placeholder="27"
+                                    />
+                                </div>
+                            </div>
+                            <p>Favorite:</p>
+                            <div class="form-section">
+                                <div class="select-box">
+                                    <label for="dropdown" id="dropdown-label">
+                                        Type
+                                    </label>
+                                    <select name="type" id="dropdown">
+                                        <option value="Adventure">
+                                            Adventure
+                                        </option>
+                                        <option value="Beach holiday">
+                                            Beach holiday
+                                        </option>
+                                        <option value="Camping">Camping</option>
+                                        <option value="City breaks">
+                                            City breaks
+                                        </option>
+                                        <option value="Cruises">Cruises</option>
+                                        <option value="Sport">Sport</option>
+                                    </select>
+                                </div>
+                                <div class="select-box">
+                                    <label for="climate" id="climate-label">
+                                        Climate
+                                    </label>
+                                    <select name="climate" id="climate">
+                                        <option value="Tropical">
+                                            Tropical
+                                        </option>
+                                        <option value="Dry">Dry</option>
+                                        <option value="Temperate">
+                                            Temperate
+                                        </option>
+                                        <option value="Continental">
+                                            Continental
+                                        </option>
+                                        <option value="Polar">Polar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p>
+                                Do you prefer being physically active on your
+                                holidays? (1-slothful, 5-marathon)
+                            </p>
+                            <div class="form-section">
+                                <div class="input-box">
+                                    <label for="active-level-1">1</label>
+                                    <input
+                                        type="radio"
+                                        name="activeLevel"
+                                        value="1"
+                                        id="active-level-1"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="active-level-2">2</label>
+                                    <input
+                                        type="radio"
+                                        name="activeLevel"
+                                        value="2"
+                                        id="active-level-2"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="active-level-3">3</label>
+                                    <input
+                                        type="radio"
+                                        name="activeLevel"
+                                        value="3"
+                                        id="active-level-3"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="active-level-4">4</label>
+                                    <input
+                                        type="radio"
+                                        name="activeLevel"
+                                        value="4"
+                                        id="active-level-4"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="active-level-5">5</label>
+                                    <input
+                                        type="radio"
+                                        name="activeLevel"
+                                        value="5"
+                                        id="active-level-5"
+                                    />
+                                </div>
+                            </div>
+                            <p>
+                                How much of your time is planned ahead? (1-one
+                                thing or two, 5-every second)
+                            </p>
+                            <div class="form-section">
+                                <div class="input-box">
+                                    <label for="time-level-1">1</label>
+                                    <input
+                                        type="radio"
+                                        name="timeLevel"
+                                        value="1"
+                                        id="time-level-1"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="time-level-2">2</label>
+                                    <input
+                                        type="radio"
+                                        name="timeLevel"
+                                        value="2"
+                                        id="time-level-2"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="time-level-3">3</label>
+                                    <input
+                                        type="radio"
+                                        name="timeLevel"
+                                        value="3"
+                                        id="time-level-3"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="time-level-4">4</label>
+                                    <input
+                                        type="radio"
+                                        name="timeLevel"
+                                        value="4"
+                                        id="time-level-4"
+                                    />
+                                </div>
+                                <div class="input-box">
+                                    <label for="time-level-5">5</label>
+                                    <input
+                                        type="radio"
+                                        name="timeLevel"
+                                        value="5"
+                                        id="time-level-5"
+                                    />
+                                </div>
+                            </div>
+                            <p>Favorite activities</p>
+                            <div class="form-section grid">
+                                <div class="input-box">
+                                    <label for="hiking">
+                                        <input
+                                            type="checkbox"
+                                            name="hiking"
+                                            id="hiking"
+                                            value="hiking"
+                                        />
+                                        Hiking
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="sunbathe">
+                                        <input
+                                            type="checkbox"
+                                            name="sunbathe"
+                                            id="sunbathe"
+                                            value="sunbathe"
+                                        />
+                                        Go and sunbathe
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="playInSea">
+                                        <input
+                                            type="checkbox"
+                                            name="playInSea"
+                                            id="playInSea"
+                                            value="playInSea"
+                                        />
+                                        Play in the sea
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="souvenirs">
+                                        <input
+                                            type="checkbox"
+                                            name="souvenirs"
+                                            id="souvenirs"
+                                            value="souvenirs"
+                                        />
+                                        Buy souvenirs
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="cousine">
+                                        <input
+                                            type="checkbox"
+                                            name="cousine"
+                                            id="cousine"
+                                            value="cousine"
+                                        />
+                                        Try the local cousine
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="sightseeing">
+                                        <input
+                                            type="checkbox"
+                                            name="sightseeing"
+                                            id="sightseeing"
+                                            value="sightseeing"
+                                        />
+                                        Do some sightseeing
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="peopleCulture">
+                                        <input
+                                            type="checkbox"
+                                            name="peopleCulture"
+                                            id="peopleCulture"
+                                            value="peopleCulture"
+                                        />
+                                        Meet people and learn about other
+                                        cultures
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="nightlife">
+                                        <input
+                                            type="checkbox"
+                                            name="nightlife"
+                                            id="nightlife"
+                                            value="nightlife"
+                                        />
+                                        Nightlife
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="sports">
+                                        <input
+                                            type="checkbox"
+                                            name="sports"
+                                            id="sports"
+                                            value="sports"
+                                        />
+                                        Do sports
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="adventureActivities">
+                                        <input
+                                            type="checkbox"
+                                            name="adventureActivities"
+                                            id="adventureActivities"
+                                            value="adventureActivities"
+                                        />
+                                        Adventure activities
+                                    </label>
+                                </div>
+                                <div class="input-box">
+                                    <label for="sleepOutdoors">
+                                        <input
+                                            type="checkbox"
+                                            name="sleepOutdoors"
+                                            id="sleepOutdoors"
+                                            value="sleepOutdoors"
+                                        />
+                                        Sleep under the stars
+                                    </label>
+                                </div>
+                            </div>
+                            <p>Tell us about your dream trip!</p>
+                            <div class="form-section">
+                                <textarea
+                                    name="textarea"
+                                    id="textarea"
+                                    cols="30"
+                                    rows="5"
+                                    class="mb-3"
+                                ></textarea>
+                            </div>
+                            <div class="mb-3 center">
+                                <input
+                                    type="submit"
+                                    id="submit"
+                                    value="Submit"
+                                    class="btn"
+                                />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="summary-page" class="page hidden">
+                        <h1 id="userGratitudeMsg">Thank you for your time,</h1>
+                        <button class="btn" id="repeat-btn">Do it again</button>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>Powered by Imagination</p>
+            </footer>
+        </section>
+        <script src="scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    </body>
+</html>
