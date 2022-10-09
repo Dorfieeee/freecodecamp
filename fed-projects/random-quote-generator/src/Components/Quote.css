@@ -1,6 +1,13 @@
 #quote-box {
+    background: khaki;
+    position: relative;
     padding: 15px 30px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#quote-box.empty {
+    width: 400px;
+    height: 200px;
 }
 
 #quote-content {
@@ -10,6 +17,7 @@
 
 #author {
     text-align: right;
+    font-size: 1.5rem;
 }
 
 blockquote {
@@ -17,7 +25,7 @@ blockquote {
 }
 
 #text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-indent: 2rem;
     text-align: center;
 }
@@ -34,4 +42,31 @@ blockquote {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+button#new-quote {
+    background: inherit;
+    font: inherit;
+    padding: 0px 15px;
+    font-size: 1.5rem;
+    border: none;
+}
+
+button#new-quote:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#tweet-quote {
+    float: right;
+}
+
+.pin {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: -60px;
+    top: -40px;
+    transform: rotateY(180deg);
 }
